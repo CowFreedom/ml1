@@ -1,0 +1,11 @@
+﻿  Source.cpp
+d:\documents\uni\programming\machine learning tutorium\einzelprogramme\skalarprodukt\c++\dot_product_comparison\dot_product_comparison\performance.h(30): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+d:\documents\uni\programming\machine learning tutorium\einzelprogramme\skalarprodukt\c++\dot_product_comparison\dot_product_comparison\performance.h(31): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+d:\documents\uni\programming\machine learning tutorium\einzelprogramme\skalarprodukt\c++\dot_product_comparison\dot_product_comparison\performance.h(53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+d:\documents\uni\programming\machine learning tutorium\einzelprogramme\skalarprodukt\c++\dot_product_comparison\dot_product_comparison\performance.h(54): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  4 of 4237 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  dot_product_comparison.vcxproj -> D:\Documents\Uni\Programming\Machine Learning Tutorium\Einzelprogramme\Skalarprodukt\C++\dot_product_comparison\x64\Release\dot_product_comparison.exe
