@@ -5,18 +5,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-n=70000
+n=3000
 #f=lambda x: 0.2+0.3*x+0.5*x**2+0.6*x**3+0.4*x**4+0.5*x**5+0.6*x**6+0.7*x**7
-#f=lambda x: 4+-2*x+2*x**2+-1*x**3
+#f=lambda x: 4+-2*x+2*x**2
 k=1.0
 f=lambda x: 2+-k*3*x+(k**2)*4*x**2+-(k**3)*5*x**3+(k**4)*4*x**4+-(k**5)*4*x**5+(k**6)*6*x**6-(k**7)*5*x**7
 #f=lambda x: 4+-2*x+2*x**2+-1*x**3+3*x**4
-m=8
+m=7
 
 predictors=['x']
 predictors.extend(['x_%d'%i for i in range(2,16)])
 	
-sample_range=np.random.uniform(0,3,n) #range the data is spread around
+sample_range=np.random.uniform(-1,1,n) #range the data is spread around
 dm=np.array([[sample_range[i]**j for j in range(1,m+1)] for i in range(n)], dtype='float')
 
 data=[sample_range.reshape(-1,1),[f(x)+np.random.normal(0,0.5) for x in sample_range]] #t values with added noise
