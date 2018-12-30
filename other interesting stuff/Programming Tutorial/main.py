@@ -117,12 +117,12 @@ def plotBiasCovarianceDecomposition():
 	#Generating regression data
 
 	n=2000 #number of data points
-	k=10 #number of regression functions
+	k=5 #number of regression functions
 	m=25 #number of basis functions
 	reg=0 #value of regularizer lambda
 	f=lambda x: math.sin(2*math.pi*x) #true functon t=f(x)
 	
-	regularizer_range=np.linspace(0,3,1000)
+	regularizer_range=np.linspace(0,3,30)
 	bias_values=[]
 	variance_values=[]
 	for u in regularizer_range:
@@ -158,8 +158,9 @@ def plotBiasCovarianceExponentialDecomposition():
 	reg=0 #value of regularizer lambda
 	f=lambda x: math.sin(2*math.pi*x) #true functon t=f(x)
 	functions=[]
-	regularizer_range=np.linspace(-5,5,10)
+	regularizer_range=np.linspace(0.1,2,10)
 	bias_values=[]
+	variance_values=[]
 	for u in regularizer_range:
 		test_range=np.linspace(0,2,100) #range where we test the regression unctions
 		for i in range(k):
@@ -173,8 +174,10 @@ def plotBiasCovarianceExponentialDecomposition():
 			functions.append(model)
 		measures=ds.bias_variance_linear_regression(functions,f)
 		bias_values.append(measures.bias_squared_regression(test_range))
+		variance_values.append(measures.variance_regression(test_range))
 		#print(measures.bias_squared_regression(test_range))
-	plt.plot(regularizer_range,bias_values,linestyle="-", )
+	plt.plot(regularizer_range,bias_values,linestyle="-", marker=" ", label= "Bias^2")
+	plt.plot(regularizer_range,variance_values,linestyle="-", marker=" ", label ="Variance")
 	plt.show()	
 	#Plot predictions
 	
