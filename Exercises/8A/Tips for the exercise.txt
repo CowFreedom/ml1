@@ -1,0 +1,12 @@
+In our example we use logistic regression.
+
+<train>
+In this folder we train our model. This is not part of the submission.
+After execution of the "train_model.py" script, weights are calculated.
+
+<submission>
+This folder is what we will submit. It includes the weights for our model and a
+"sample_submission" script.
+#As usual, nothing is finished yet
+
+
