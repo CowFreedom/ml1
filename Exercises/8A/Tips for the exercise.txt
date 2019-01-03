@@ -1,4 +1,6 @@
-In our example we use logistic regression.
+In our example we use logistic regression. This may not be optimal, especially as we use
+the usual squared error instead of the more fitting classification loss 
+defined in the task for the derivation of the weights w.
 
 <train>
 In this folder we train our model. This is not part of the submission.
@@ -7,6 +9,42 @@ After execution of the "train_model.py" script, weights are calculated.
 <submission>
 This folder is what we will submit. It includes the weights for our model and a
 "sample_submission" script.
-#As usual, nothing is finished yet
 
 
+Caution: We have to be careful, that we build the same design matrix in the
+training as well as submission phase. See additional comments in the code.
+
+
+Caution 2: When you submit, tell Bertschinger which version of Python you use (I think
+he uses 2.7. The code here uses 3.7). If you do not know which version you have, you can check
+on the command line with the following command (Windows):
+
+python --version
+
+
+This of course requires you to have set the environment variables accordingly. If you need any help,
+please do not hesitate to contact me.
+
+
+Tips and ticks for the exercise:
+
+# We have 20 (twenty) input dimensions. It would be convinient to remove 
+some of them without significantly affecting the performance of our model.
+In order to find dimensions we can cut, check them for multicollinearity.
+You can do this by e.g. running the Pearson Product moment (also called
+correlation coefficient) between all subsets of axes. Cut axes with high
+correlation.
+
+#Separate the data into a test and training set. As the data is probably not from a time series,
+randomly partition half of the data as training and half of the data as test set. This should
+help us to combat overfitting which can happen VERY quickly. In other words: Train the weights
+on half the data and test the classification loss on the other half. 
+Of all the tips, this is the one you should really do. 
+
+#Create nonlinear basis functions. As of now, the sample code uses linear basis functions which leads to
+20 basis functions plus one intercept (21 basis functions total).
+Try squared, cubic, etc. polynomials. This is harder than it looks like, because even allowing degree up to 2 
+(squared polynomials) greatly increases the required basis functions (over 230).
+This is because we need to also include ALL combinations of degree two polynomials, e.g.: x*y, x*z, y*z, x*x
+etc.
+This becomes more feasible, after we have reduced the dimensions, see first tip.

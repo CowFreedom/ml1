@@ -82,6 +82,11 @@ def buildPolynomialDesignMatrix(data, d):
 		sys.exit()
 		iter1+=1
 	return X
+
+#The design matrix in the training phase should be the same
+#as in the testing phase.
+#If you change this function you have to equally change
+#the design matrix function in the "sample.submission.py".
 	
 def buildLinearDesignMatrix(data):
 	X=np.ones(shape=(len(data),len(data[0])+1))
