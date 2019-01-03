@@ -4,7 +4,8 @@ defined in the task for the derivation of the weights w.
 
 <train>
 In this folder we train our model. This is not part of the submission.
-After execution of the "train_model.py" script, weights are calculated.
+After execution of the "train_model.py" script, weights are calculated and
+stored in the submission folder.
 
 <submission>
 This folder is what we will submit. It includes the weights for our model and a
@@ -22,13 +23,13 @@ on the command line with the following command (Windows):
 python --version
 
 
-This of course requires you to have set the environment variables accordingly. If you need any help,
+This requires to have set the environment variables accordingly. If you need any help,
 please do not hesitate to contact me.
 
 
-Tips and ticks for the exercise:
+Tips and tricks for the exercise:
 
-# We have 20 (twenty) input dimensions. It would be convinient to remove 
+# We have 20 (twenty) input dimensions. It would be convenient to remove 
 some of them without significantly affecting the performance of our model.
 In order to find dimensions we can cut, check them for multicollinearity.
 You can do this by e.g. running the Pearson Product moment (also called
@@ -37,7 +38,7 @@ correlation.
 
 #Separate the data into a test and training set. As the data is probably not from a time series,
 randomly partition half of the data as training and half of the data as test set. This should
-help us to combat overfitting which can happen VERY quickly. In other words: Train the weights
+help us combat overfitting which can happen VERY quickly. In other words: Train the weights
 on half the data and test the classification loss on the other half. 
 Of all the tips, this is the one you should really do. 
 
@@ -47,4 +48,4 @@ Try squared, cubic, etc. polynomials. This is harder than it looks like, because
 (squared polynomials) greatly increases the required basis functions (over 230).
 This is because we need to also include ALL combinations of degree two polynomials, e.g.: x*y, x*z, y*z, x*x
 etc.
-This becomes more feasible, after we have reduced the dimensions, see first tip.
+This becomes more feasible after we have reduced the dimensions, see first tip.
