@@ -257,6 +257,39 @@ def runClassification_sklearn_2classes_artificial_data():
 
 	plt.show()	
 	
+	
+def createArtificialData():
+	c1=np.random.multivariate_normal([0,0,0,0],0.5* np.eye(4), 50)
+	c2=np.random.multivariate_normal([1,1,1,1],0.5* np.eye(4), 50)
+	c3=np.random.multivariate_normal([-1,-1,-1,-1],0.5* np.eye(4), 50)
+
+	t1=0*np.ones(50)
+	t2=1*np.ones(50)
+	t3=2*np.ones(50)
+
+
+	t=np.hstack((t1,t2,t3))
+	X=np.ones(shape=(150,4))
+
+	for i in range(50):
+		X[i]=c1[i]
+
+	for i in range(50,100):
+		X[i]=c2[int(i%50)]
+
+	for i in range(100,150):
+		X[i]=c3[int(i%100)]
+
+	path="D:\\Documents\\Uni\\Programming\\Machine Learning Tutorium\\github Ordner\\Exercises\\9A\\data\\"
+
+	np.savetxt(path+'t_artificial.txt', t, delimiter='\n')
+	np.savetxt(path+'x_artificial.txt', X, delimiter=',')
+
+	plt.plot(c1[:,0],c1[:,1],linestyle=" ",marker="o")
+	plt.plot(c2[:,0],c2[:,1],linestyle=" ",marker="o")
+	plt.plot(c3[:,0],c3[:,1],linestyle=" ",marker="o")
+	plt.show()
+
 
 #runClassification_sklearn()
 runClassification_sklearn_artificial_data()
