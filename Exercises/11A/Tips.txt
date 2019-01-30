@@ -1,0 +1,10 @@
+I recommend reading the first chapter to get an overall grip on neural networks:
+
+http://neuralnetworksanddeeplearning.com/chap1.html
+
+It even explains mini-batches, etc!
+
+And then the second chapter to understand backpropagation:
+http://neuralnetworksanddeeplearning.com/chap2.html
+
+And the rest if you want to know more or are a nerd!
